@@ -2,7 +2,7 @@ import {
     FavoriteBorderOutlined,
     SearchOutlined,
     ShoppingCartOutlined,
-  } from "@material-ui/icons";
+  } from "@mui/icons-material";
 import styled from "styled-components";
 
 const Info = styled.div`
@@ -73,13 +73,13 @@ return (
     <Image src={item.img} />
     <Info>
         <Icon>
-        <ShoppingCartOutlined />
+            <ShoppingCartOutlined />
         </Icon>
         <Icon>
-        <SearchOutlined />
+            <SearchOutlined />
         </Icon>
         <Icon>
-        <FavoriteBorderOutlined />
+            <FavoriteBorderOutlined />
         </Icon>
     </Info>
     </Container>
