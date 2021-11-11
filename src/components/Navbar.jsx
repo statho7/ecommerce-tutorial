@@ -1,6 +1,5 @@
 import { Search, ShoppingCartOutlined } from '@mui/icons-material'
 import Badge from '@mui/material/Badge';
-// import MailIcon from '@mui/icons-material/Mail';
 import React from 'react'
 import styled from "styled-components"
 
