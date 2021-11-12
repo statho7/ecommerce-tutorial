@@ -1,14 +1,14 @@
 export const sliderItems = [
   {
     id: 1,
-    img: "https://i.ibb.co/XsdmR2c/1.png",
+    img: "https://i.ibb.co/DG69bQ4/2.png",
     title: "SUMMER SALE",
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
     bg: "f5fafd",
   },
   {
     id: 2,
-    img: "https://i.ibb.co/DG69bQ4/2.png",
+    img: "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdna.lystit.com%2Fphotos%2F2013%2F01%2F09%2Fzara-brown-slim-fit-corduroy-trousers-product-1-5993570-750354426.jpeg&f=1&nofb=1",
     title: "AUTUMN COLLECTION",
     desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
     bg: "fcf1ed",
@@ -39,7 +39,7 @@ export const categories = [
     id: 3,
     img: "https://images.pexels.com/photos/5480696/pexels-photo-5480696.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     title: "LIGHT JACKETS",
-    cat:"jeans"
+    cat:"men"
   },
 ];
 

@@ -10,13 +10,14 @@ const Container = styled.div`
   display: flex;
   position: relative;
   overflow: hidden;
-  ${mobile({ display: "none" })}
+  /* ${mobile({ display: "none" })} */
+  ${mobile({ height: "unset" })}
 `;
 
 const Arrow = styled.div`
   width: 50px;
   height: 50px;
-  background-color: #fff7f7;
+  background-color: #d3d3d3;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -45,24 +46,32 @@ const Slide = styled.div`
   display: flex;
   align-items: center;
   background-color: #${(props) => props.bg};
+  ${mobile({ flexWrap: "wrap", height: "unset" })}
 `;
 
 const ImgContainer = styled.div`
-  height: 100%;
+  /* height: 100%; */
   flex: 1;
+  width: 100vw;
+  ${mobile({ display: "flex", justifyContent: "center", flex: "none" })}
 `;
 
 const Image = styled.img`
-  height: 80%;
+  /* height: 80%; */
+  width: 35vw;
+  ${mobile({ width: "50%" })}
 `;
 
 const InfoContainer = styled.div`
   flex: 1;
   padding: 50px;
+  width: 65vw;
+  ${mobile({ width: "80%", flex: "none", minHeight: "160px", height: "40%", padding: "0.02vh 0 0.02vh 6vh" })}
 `;
 
 const Title = styled.h1`
   font-size: 70px;
+  ${mobile({ fontSize: "26px" })}
 `;
 
 const Desc = styled.p`
@@ -70,6 +79,7 @@ const Desc = styled.p`
   font-size: 20px;
   font-weight: 500;
   letter-spacing: 3px;
+  ${mobile({ margin: "0.4vh 0", fontSize: "12px" })}
 `;
 
 const Button = styled.button`
