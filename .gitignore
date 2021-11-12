@@ -7,12 +7,17 @@
 /ecommerceapi/node_modules
 /ecommerceapi/.pnp
 /ecommerceapi/.pnp.js
+/ecommerceadmin/node_modules
+/ecommerceadmin/.pnp
+/ecommerceadmin/.pnp.js
 
 # testing
 /ecommerce tutorial/coverage
+/ecommerceadmin/coverage
 
 # production
 /ecommerce tutorial/build
+/ecommerceadmin/build
 
 # misc
 /ecommerce tutorial/.DS_Store
@@ -24,4 +29,15 @@
 /ecommerce tutorial/npm-debug.log*
 /ecommerce tutorial/yarn-debug.log*
 /ecommerce tutorial/yarn-error.log*
+
+/ecommerceadmin/.DS_Store
+/ecommerceadmin/.env.local
+/ecommerceadmin/.env.development.local
+/ecommerceadmin/.env.test.local
+/ecommerceadmin/.env.production.local
+
+/ecommerceadmin/npm-debug.log*
+/ecommerceadmin/yarn-debug.log*
+/ecommerceadmin/yarn-error.log*
+
 /ecommerceapi/.env
