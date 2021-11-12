@@ -1,23 +1,27 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
-/.pnp
-.pnp.js
+/ecommerce tutorial/node_modules
+/ecommerce tutorial/.pnp
+/ecommerce tutorial/.pnp.js
+/ecommerceapi/node_modules
+/ecommerceapi/.pnp
+/ecommerceapi/.pnp.js
 
 # testing
-/coverage
+/ecommerce tutorial/coverage
 
 # production
-/build
+/ecommerce tutorial/build
 
 # misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+/ecommerce tutorial/.DS_Store
+/ecommerce tutorial/.env.local
+/ecommerce tutorial/.env.development.local
+/ecommerce tutorial/.env.test.local
+/ecommerce tutorial/.env.production.local
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+/ecommerce tutorial/npm-debug.log*
+/ecommerce tutorial/yarn-debug.log*
+/ecommerce tutorial/yarn-error.log*
+/ecommerceapi/.env
