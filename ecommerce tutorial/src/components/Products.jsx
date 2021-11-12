@@ -3,12 +3,17 @@ import styled from "styled-components";
 import { popularProducts } from "../data";
 import Product from "./Product";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  text-decoration: none;
+  a svg {
+    color: black;
+  }
 `;
 
 const Products = ({ cat, filters, sort }) => {
@@ -59,10 +64,14 @@ const Products = ({ cat, filters, sort }) => {
   return (
     <Container>
       {cat
-        ? filteredProducts.map((item) => <Product item={item} key={item.id} />)
+        ? filteredProducts.map((item) => 
+       <Link to={"/product/" + item._id}>
+          <Product item={item} key={item._id} />
+        </Link>
+          )
         : products
             .slice(0, 8)
-            .map((item) => <Product item={item} key={item.id} />)}
+            .map((item) => <Link to={"/product/" + item._id}><Product item={item} key={item._id} /></Link>)}
     </Container>
   );
 };
