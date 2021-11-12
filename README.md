@@ -2,6 +2,10 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Azure Deployment
+
+This website was deployed on Azure Blob Storage and the link is : https://myecommerce.azureedge.net/
+
 ## Available Scripts
 
 In the project directory, you can run:
