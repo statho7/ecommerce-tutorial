@@ -66,7 +66,7 @@ const InfoContainer = styled.div`
   flex: 1;
   padding: 50px;
   width: 65vw;
-  ${mobile({ width: "80%", flex: "none", minHeight: "160px", height: "40%", padding: "0.02vh 0 0.02vh 6vh" })}
+  ${mobile({ width: "80%", flex: "none", minHeight: "160px", height: "15%", padding: "0.02vh 0 0.02vh 6vh" })}
 `;
 
 const Title = styled.h1`

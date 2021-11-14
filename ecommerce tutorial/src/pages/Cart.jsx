@@ -9,6 +9,8 @@ import StripeCheckout from "react-stripe-checkout";
 import { useEffect, useState } from "react";
 import { userRequest } from "../requestMethods";
 import { useHistory } from "react-router";
+import { editProduct, removeProduct } from "../redux/cartRedux";
+import { useDispatch } from "react-redux";
 
 const KEY = process.env.REACT_APP_STRIPE;
 
@@ -163,7 +165,17 @@ const Cart = () => {
   const cart = useSelector((state) => state.cart);
   const [stripeToken, setStripeToken] = useState(null);
   const history = useHistory();
+  const [products, setProducts] = useState(cart.products);
+  const [total, setTotal] = useState(cart.total);
+  const [product, setProduct] = useState({});
+  const [quantity, setQuantity] = useState(1);
+  const [color, setColor] = useState("");
+  const [size, setSize] = useState("");
+  const [date, setDate] = useState("");
+  const dispatch = useDispatch();
 
+  console.log(cart);
+  
   const onToken = (token) => {
     setStripeToken(token);
   };
@@ -182,6 +194,65 @@ const Cart = () => {
     };
     stripeToken && makeRequest();
   }, [stripeToken, cart.total, history]);
+
+  const handleVariables = (prod) => {
+    setProduct(prod);    
+    setQuantity(product.quantity);
+    setColor(product.color);
+    setSize(product.size);
+    setDate(product.date);
+  }
+
+  const handleQuantity = (action) => {
+    if (action === "dec") {
+      setQuantity(quantity - 1);
+    } else {
+      setQuantity(quantity + 1);
+    }
+
+    handleClick(action, product, quantity);
+  };
+
+  const handleClick = (action, prod, quan) => {
+    if (action === "dec" && quantity === 0) {
+      // console.log(prod);
+      // console.log(cart, product, quantity, color, size, date);
+      dispatch(
+        removeProduct({ cart, product, quantity, color, size, date })
+      );
+    } else if (action === "dec") { 
+      let temp = products;
+      temp.filter(item => item.date !== prod.date);
+      setProducts(temp);
+      prod.quantity = prod.quantity - 1;
+      temp = total - prod.price;
+      setTotal(temp);
+      setProduct(prod);
+      // setProducts(products);
+      // console.log(prod);
+      // console.log(products, quantity, total);
+
+      dispatch(
+        editProduct({ products, quantity, total })
+      );
+    } else {
+      let temp = products;
+      temp.filter(item => item.date !== prod.date);
+      setProducts(temp);
+      prod.quantity = prod.quantity + 1;
+      temp = total + prod.price;
+      setTotal(temp);
+      setProduct(prod);   
+      // setProducts(products);
+      // console.log(prod);
+      // console.log(products, quantity, total);
+
+      dispatch(
+        editProduct({ products, quantity, total })
+      );
+    }
+  };
+
   return (
     <Container>
       <Navbar />
@@ -215,11 +286,11 @@ const Cart = () => {
                     </ProductSize>
                   </Details>
                 </ProductDetail>
-                <PriceDetail>
+                <PriceDetail >
                   <ProductAmountContainer>
-                    <Add />
+                    <Remove onMouseOver={() => handleVariables(product)} onClick={() => handleQuantity("dec")} />
                     <ProductAmount>{product.quantity}</ProductAmount>
-                    <Remove />
+                    <Add onMouseOver={() => handleVariables(product)} onClick={() => handleQuantity("inc")} />
                   </ProductAmountContainer>
                   <ProductPrice>
                     $ {product.price * product.quantity}
